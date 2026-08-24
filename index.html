@@ -4,26 +4,14 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>THE HIDDEN ARCHIVE</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- =========================
-     GOOGLE FONTS
-========================= -->
-
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Cinzel+Decorative:wght@400;700;900&family=Orbitron:wght@400;500;700;900&display=swap"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Cinzel+Decorative:wght@400;700;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 
 <style>
@@ -40,18 +28,10 @@
 
 html,
 body{
-
     width:100%;
     height:100%;
-
     overflow:hidden;
-
 }
-
-
-/* =====================================================
-   BODY
-===================================================== */
 
 body{
 
@@ -59,58 +39,42 @@ body{
 
     radial-gradient(
         circle at 50% 42%,
-        rgba(0,255,150,.13) 0%,
+        rgba(0,255,150,.13),
         rgba(0,150,255,.08) 25%,
         transparent 48%
     ),
 
     radial-gradient(
         circle at 15% 75%,
-        rgba(0,120,90,.14) 0%,
+        rgba(0,120,90,.14),
         transparent 38%
     ),
 
     radial-gradient(
         circle at 85% 20%,
-        rgba(0,90,180,.12) 0%,
+        rgba(0,90,180,.12),
         transparent 35%
     ),
 
-    radial-gradient(
-        circle at center,
-        #08110f 0%,
-        #040807 35%,
-        #020303 65%,
-        #000 100%
-    );
+    #020303;
 
     color:#ddd;
 
-    font-family:
-    'Orbitron',
-    monospace;
-
-    position:relative;
+    font-family:'Orbitron',monospace;
 
 }
 
 
 /* =====================================================
-   MOVING FOG
+   BACKGROUND
 ===================================================== */
 
 .fog{
 
     position:fixed;
-
-    width:120vw;
-    height:120vh;
-
-    left:-10vw;
-    top:-10vh;
+    inset:-10%;
 
     background:
-
     radial-gradient(
         ellipse at center,
         rgba(0,255,170,.08),
@@ -120,54 +84,33 @@ body{
     filter:blur(40px);
 
     animation:
-    fogMove 14s
-    infinite alternate
-    ease-in-out;
+    fogMove 14s infinite alternate ease-in-out;
 
     pointer-events:none;
-
     z-index:1;
 
 }
 
-
 @keyframes fogMove{
 
     0%{
-
-        transform:
-        translate(-5%,-3%)
-        scale(1);
-
+        transform:translate(-5%,-3%) scale(1);
     }
 
     50%{
-
-        transform:
-        translate(4%,2%)
-        scale(1.1);
-
+        transform:translate(4%,2%) scale(1.1);
     }
 
     100%{
-
-        transform:
-        translate(-2%,6%)
-        scale(1.2);
-
+        transform:translate(-2%,6%) scale(1.2);
     }
 
 }
 
 
-/* =====================================================
-   PARTICLES
-===================================================== */
-
 #particles{
 
     position:fixed;
-
     inset:0;
 
     width:100%;
@@ -178,22 +121,15 @@ body{
 }
 
 
-/* =====================================================
-   SCANLINES
-===================================================== */
-
 .scanlines{
 
     position:fixed;
-
     inset:0;
 
     pointer-events:none;
-
-    z-index:8;
+    z-index:50;
 
     background:
-
     repeating-linear-gradient(
         0deg,
         rgba(255,255,255,.018) 0px,
@@ -205,22 +141,15 @@ body{
 }
 
 
-/* =====================================================
-   VIGNETTE
-===================================================== */
-
 .vignette{
 
     position:fixed;
-
     inset:0;
 
     pointer-events:none;
-
-    z-index:7;
+    z-index:49;
 
     background:
-
     radial-gradient(
         circle,
         transparent 35%,
@@ -232,44 +161,71 @@ body{
 
 
 /* =====================================================
-   MAIN OPENING SCREEN
+   CORNER UI
+===================================================== */
+
+.corner{
+
+    position:fixed;
+    z-index:20;
+
+    font-size:7px;
+    letter-spacing:2px;
+    color:#29413c;
+
+}
+
+.top-left{
+    top:25px;
+    left:25px;
+}
+
+.top-right{
+    top:25px;
+    right:25px;
+}
+
+.bottom-left{
+    bottom:25px;
+    left:25px;
+}
+
+.bottom-right{
+    bottom:25px;
+    right:25px;
+}
+
+
+/* =====================================================
+   OPENING
 ===================================================== */
 
 .main{
 
     position:absolute;
-
     inset:0;
 
     display:flex;
 
     justify-content:center;
-
     align-items:center;
 
     text-align:center;
 
-    z-index:5;
+    z-index:10;
 
-    transition:
-    opacity 1s ease;
+    transition:1s ease;
 
 }
 
 
-/* =====================================================
-   CONTENT
-===================================================== */
-
 .content{
 
     width:92%;
-
     max-width:1000px;
 
     animation:
-    intro 3s ease
-    forwards;
+    intro 3s ease forwards;
 
 }
 
@@ -277,61 +233,36 @@ body{
 @keyframes intro{
 
     from{
-
         opacity:0;
-
-        transform:
-        translateY(30px)
-        scale(.96);
-
+        transform:translateY(30px) scale(.96);
         filter:blur(12px);
-
     }
 
     to{
-
         opacity:1;
-
-        transform:
-        translateY(0)
-        scale(1);
-
+        transform:translateY(0) scale(1);
         filter:blur(0);
-
     }
 
 }
 
 
-/* =====================================================
-   ACCESS RESTRICTED
-===================================================== */
-
 .top-secret{
 
-    font-family:
-    'Orbitron',
-    monospace;
-
     font-size:9px;
-
     letter-spacing:5px;
 
     color:#55706a;
 
     margin-bottom:28px;
 
-    animation:
-    blink 4s infinite;
+    animation:blink 4s infinite;
 
 }
 
-
 @keyframes blink{
 
-    0%,
-    90%,
-    100%{
+    0%,90%,100%{
         opacity:1;
     }
 
@@ -342,68 +273,39 @@ body{
 }
 
 
-/* =====================================================
-   TITLE
-===================================================== */
-
 .title{
 
-    font-family:
-    'Cinzel Decorative',
-    serif;
+    font-family:'Cinzel Decorative',serif;
 
     font-size:
-    clamp(
-        35px,
-        8vw,
-        100px
-    );
+    clamp(35px,8vw,100px);
 
     font-weight:900;
 
     letter-spacing:
-    clamp(
-        3px,
-        1vw,
-        12px
-    );
+    clamp(3px,1vw,12px);
 
     line-height:1.2;
 
     color:#e6e6e6;
 
-    text-transform:uppercase;
-
     position:relative;
 
     text-shadow:
-
-    0 0 5px
-    rgba(255,255,255,.4),
-
-    0 0 25px
-    rgba(0,255,180,.18),
-
-    0 0 70px
-    rgba(0,120,255,.08);
+    0 0 5px rgba(255,255,255,.4),
+    0 0 25px rgba(0,255,180,.18),
+    0 0 70px rgba(0,120,255,.08);
 
 }
 
 
-/* =====================================================
-   TITLE GLITCH
-===================================================== */
-
 .title::before,
 .title::after{
 
-    content:
-    "THE HIDDEN ARCHIVE";
+    content:"THE HIDDEN ARCHIVE";
 
     position:absolute;
-
     left:0;
-
     width:100%;
 
     opacity:0;
@@ -414,9 +316,7 @@ body{
 .title::before{
 
     color:#48bfa0;
-
-    animation:
-    glitch1 5s infinite;
+    animation:glitch1 5s infinite;
 
 }
 
@@ -424,38 +324,25 @@ body{
 .title::after{
 
     color:#4185c9;
-
-    animation:
-    glitch2 5s infinite;
+    animation:glitch2 5s infinite;
 
 }
 
 
 @keyframes glitch1{
 
-    0%,
-    94%,
-    100%{
-
+    0%,94%,100%{
         opacity:0;
-
         transform:none;
-
     }
 
     95%{
-
         opacity:.8;
-
-        transform:
-        translate(-3px,1px);
-
+        transform:translate(-3px,1px);
     }
 
     96%{
-
         opacity:0;
-
     }
 
 }
@@ -463,29 +350,18 @@ body{
 
 @keyframes glitch2{
 
-    0%,
-    91%,
-    100%{
-
+    0%,91%,100%{
         opacity:0;
-
         transform:none;
-
     }
 
     92%{
-
         opacity:.6;
-
-        transform:
-        translate(4px,-2px);
-
+        transform:translate(4px,-2px);
     }
 
     93%{
-
         opacity:0;
-
     }
 
 }
@@ -493,58 +369,34 @@ body{
 
 /* =====================================================
    CREATOR
-   PAINT BRUSH STYLE
 ===================================================== */
 
 .creator{
 
     margin-top:22px;
 
-    font-family:
-    'Caveat Brush',
-    cursive;
+    font-family:'Caveat Brush',cursive;
 
     font-size:
-    clamp(
-        22px,
-        3.5vw,
-        36px
-    );
+    clamp(22px,3.5vw,36px);
 
     letter-spacing:2px;
 
     color:#aaa;
 
-    text-transform:none;
-
-    transform:
-    rotate(-2deg);
-
-    text-shadow:
-
-    0 0 8px
-    rgba(255,255,255,.12),
-
-    0 0 20px
-    rgba(0,255,180,.04);
+    transform:rotate(-2deg);
 
 }
 
 
-/* =====================================================
-   LINE
-===================================================== */
-
 .line{
 
     width:180px;
-
     height:1px;
 
     margin:30px auto;
 
     background:
-
     linear-gradient(
         90deg,
         transparent,
@@ -555,30 +407,15 @@ body{
 }
 
 
-/* =====================================================
-   MESSAGE
-===================================================== */
-
 .message{
 
-    margin-top:5px;
-
-    font-family:
-    'Orbitron',
-    monospace;
-
     font-size:10px;
-
     letter-spacing:3px;
 
     color:#53615f;
 
 }
 
-
-/* =====================================================
-   ENTER BUTTON
-===================================================== */
 
 .enter{
 
@@ -588,41 +425,17 @@ body{
 
     border:1px solid #31504a;
 
-    background:
-    rgba(0,0,0,.4);
+    background:rgba(0,0,0,.4);
 
     color:#8daba5;
 
     text-decoration:none;
 
-    font-family:
-    'Orbitron',
-    monospace;
-
     font-size:10px;
 
     letter-spacing:4px;
 
-    transition:.5s;
-
     cursor:pointer;
-
-    position:relative;
-
-}
-
-
-.enter::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-7px;
-
-    border:1px solid #18312c;
-
-    opacity:0;
 
     transition:.5s;
 
@@ -631,81 +444,14 @@ body{
 
 .enter:hover{
 
-    color:#eee;
+    color:#fff;
 
     border-color:#72a99c;
 
     letter-spacing:6px;
 
     box-shadow:
-
-    0 0 25px
-    rgba(0,255,180,.12),
-
-    inset 0 0 20px
-    rgba(0,255,180,.05);
-
-}
-
-
-.enter:hover::before{
-
-    opacity:1;
-
-}
-
-
-/* =====================================================
-   CORNER UI
-===================================================== */
-
-.corner{
-
-    position:fixed;
-
-    z-index:6;
-
-    font-family:
-    'Orbitron',
-    monospace;
-
-    font-size:7px;
-
-    letter-spacing:2px;
-
-    color:#29413c;
-
-}
-
-
-.top-left{
-
-    top:25px;
-    left:25px;
-
-}
-
-
-.top-right{
-
-    top:25px;
-    right:25px;
-
-}
-
-
-.bottom-left{
-
-    bottom:25px;
-    left:25px;
-
-}
-
-
-.bottom-right{
-
-    bottom:25px;
-    right:25px;
+    0 0 25px rgba(0,255,180,.12);
 
 }
 
@@ -717,17 +463,15 @@ body{
 .archive-room{
 
     position:fixed;
-
     inset:0;
 
-    z-index:20;
+    z-index:30;
 
     display:none;
 
     flex-direction:column;
 
     justify-content:center;
-
     align-items:center;
 
     padding:30px;
@@ -746,18 +490,11 @@ body{
         transparent 35%
     ),
 
-    radial-gradient(
-        circle at 20% 80%,
-        rgba(0,150,100,.06),
-        transparent 40%
-    ),
-
     #020504;
 
     opacity:0;
 
-    transition:
-    opacity 1.5s ease;
+    transition:1.2s ease;
 
     overflow:auto;
 
@@ -765,9 +502,7 @@ body{
 
 
 .archive-room.active{
-
     opacity:1;
-
 }
 
 
@@ -779,7 +514,7 @@ body{
 
     text-align:center;
 
-    margin-bottom:45px;
+    margin-bottom:35px;
 
 }
 
@@ -787,7 +522,6 @@ body{
 .archive-code{
 
     font-size:8px;
-
     letter-spacing:5px;
 
     color:#3f7770;
@@ -799,25 +533,14 @@ body{
 
 .archive-header h2{
 
-    font-family:
-    'Cinzel Decorative',
-    serif;
+    font-family:'Cinzel Decorative',serif;
 
     font-size:
-    clamp(
-        30px,
-        7vw,
-        70px
-    );
+    clamp(30px,7vw,70px);
 
     letter-spacing:6px;
 
     color:#ddd;
-
-    text-shadow:
-
-    0 0 25px
-    rgba(0,255,180,.15);
 
 }
 
@@ -827,10 +550,32 @@ body{
     margin-top:15px;
 
     font-size:8px;
-
     letter-spacing:4px;
 
     color:#4c6662;
+
+}
+
+
+/* =====================================================
+   CLUE TRACKER
+===================================================== */
+
+.clue-tracker{
+
+    position:absolute;
+
+    top:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:7px;
+
+    letter-spacing:3px;
+
+    color:#46655e;
 
 }
 
@@ -844,13 +589,7 @@ body{
     display:grid;
 
     grid-template-columns:
-    repeat(
-        2,
-        minmax(
-            130px,
-            220px
-        )
-    );
+    repeat(2,minmax(130px,220px));
 
     gap:18px;
 
@@ -869,15 +608,13 @@ body{
 
     border:1px solid #182725;
 
-    background:
-    rgba(3,12,10,.65);
+    background:rgba(3,12,10,.65);
 
     display:flex;
 
     flex-direction:column;
 
     justify-content:center;
-
     align-items:center;
 
     text-align:center;
@@ -891,64 +628,33 @@ body{
 }
 
 
-.archive-box::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        transparent,
-        rgba(0,255,180,.06),
-        transparent
-    );
-
-    transform:
-    translateX(-100%);
-
-    transition:.7s;
-
-}
-
-
 .archive-box:hover{
 
     border-color:#376b62;
 
-    transform:
-    translateY(-5px);
+    transform:translateY(-5px);
 
     box-shadow:
-
-    0 10px 35px
-    rgba(0,255,180,.08);
+    0 10px 35px rgba(0,255,180,.08);
 
 }
 
 
-.archive-box:hover::before{
+.archive-box.completed{
 
-    transform:
-    translateX(100%);
+    border-color:#3f8f78;
+
+    box-shadow:
+    inset 0 0 25px rgba(0,255,180,.05);
 
 }
 
-
-/* =====================================================
-   BOX NUMBER
-===================================================== */
 
 .box-number{
 
     position:absolute;
 
     top:10px;
-
     left:12px;
 
     font-size:7px;
@@ -957,10 +663,6 @@ body{
 
 }
 
-
-/* =====================================================
-   BOX ICON
-===================================================== */
 
 .box-icon{
 
@@ -973,15 +675,7 @@ body{
 }
 
 
-/* =====================================================
-   BOX TITLE
-===================================================== */
-
 .archive-box h3{
-
-    font-family:
-    'Orbitron',
-    monospace;
 
     font-size:11px;
 
@@ -991,10 +685,6 @@ body{
 
 }
 
-
-/* =====================================================
-   BOX STATUS
-===================================================== */
 
 .archive-box small{
 
@@ -1010,22 +700,251 @@ body{
 
 
 /* =====================================================
-   ARCHIVE FOOTER
+   FILE OVERLAY
+===================================================== */
+
+.file-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        rgba(0,80,65,.12),
+        #010202 65%
+    );
+
+    opacity:0;
+
+    transition:1s ease;
+
+}
+
+
+.file-screen.active{
+
+    display:flex;
+
+    opacity:1;
+
+}
+
+
+.file-box{
+
+    width:min(600px,88%);
+
+    padding:45px 30px;
+
+    border:1px solid #27453f;
+
+    background:
+    rgba(1,8,7,.9);
+
+    text-align:center;
+
+    box-shadow:
+    0 0 60px rgba(0,255,180,.05);
+
+    animation:fileOpen 1s ease;
+
+}
+
+
+@keyframes fileOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.85)
+        translateY(20px);
+
+        filter:blur(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        translateY(0);
+
+        filter:blur(0);
+
+    }
+
+}
+
+
+.file-label{
+
+    font-size:7px;
+
+    letter-spacing:5px;
+
+    color:#46776c;
+
+}
+
+
+.file-title{
+
+    margin-top:18px;
+
+    font-family:'Cinzel Decorative',serif;
+
+    font-size:
+    clamp(25px,6vw,55px);
+
+    color:#ddd;
+
+}
+
+
+.file-status{
+
+    margin-top:12px;
+
+    font-size:7px;
+
+    letter-spacing:3px;
+
+    color:#52645f;
+
+}
+
+
+.file-message{
+
+    margin:35px auto;
+
+    max-width:450px;
+
+    font-size:11px;
+
+    line-height:2;
+
+    letter-spacing:2px;
+
+    color:#8b9895;
+
+}
+
+
+.search-memory{
+
+    display:inline-block;
+
+    padding:14px 25px;
+
+    border:1px solid #365d55;
+
+    color:#83a69e;
+
+    cursor:pointer;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+    transition:.4s;
+
+}
+
+
+.search-memory:hover{
+
+    color:white;
+
+    border-color:#79a99f;
+
+    box-shadow:
+    0 0 25px rgba(0,255,180,.1);
+
+}
+
+
+/* =====================================================
+   CLUE REVEAL
+===================================================== */
+
+.clue-result{
+
+    display:none;
+
+}
+
+
+.clue-result.show{
+
+    display:block;
+
+}
+
+
+.clue-text{
+
+    margin:30px auto;
+
+    padding:20px;
+
+    border-top:1px solid #203a35;
+
+    border-bottom:1px solid #203a35;
+
+    color:#9ab5ae;
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    line-height:2;
+
+}
+
+
+.close-file{
+
+    margin-top:20px;
+
+    font-size:7px;
+
+    letter-spacing:3px;
+
+    color:#45635d;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   FOOTER
 ===================================================== */
 
 .archive-footer{
 
-    width:
-    min(
-        440px,
-        90%
-    );
+    width:min(440px,90%);
 
     display:flex;
 
     justify-content:space-between;
 
-    margin-top:40px;
+    margin-top:35px;
 
     font-size:6px;
 
@@ -1042,86 +961,34 @@ body{
 
 @media(max-width:600px){
 
-    .title{
-
-        line-height:1.25;
-
+    .corner{
+        font-size:6px;
     }
 
+    .title{
+        line-height:1.25;
+    }
 
     .creator{
-
         font-size:25px;
-
-        letter-spacing:1px;
-
     }
-
 
     .message{
-
         font-size:8px;
-
-        letter-spacing:2px;
-
     }
-
 
     .enter{
-
         padding:14px 22px;
-
     }
-
-
-    .corner{
-
-        font-size:6px;
-
-    }
-
-
-    .archive-room{
-
-        padding:
-        20px 12px;
-
-    }
-
-
-    .archive-header{
-
-        margin-bottom:28px;
-
-    }
-
-
-    .archive-header h2{
-
-        letter-spacing:3px;
-
-    }
-
-
-    .archive-header p{
-
-        letter-spacing:2px;
-
-        font-size:7px;
-
-    }
-
 
     .archive-grid{
 
         width:100%;
-
         max-width:360px;
 
         gap:10px;
 
     }
-
 
     .archive-box{
 
@@ -1129,11 +996,31 @@ body{
 
     }
 
+    .archive-header h2{
 
-    .archive-footer{
+        letter-spacing:3px;
 
-        margin-top:25px;
+    }
 
+}
+
+
+/* =====================================================
+   EXTRA SMALL
+===================================================== */
+
+@media(max-width:380px){
+
+    .archive-box{
+        height:125px;
+    }
+
+    .box-icon{
+        font-size:22px;
+    }
+
+    .archive-box h3{
+        font-size:9px;
     }
 
 }
@@ -1160,34 +1047,23 @@ body{
 
 
 <!-- =====================================================
-     CORNER SYSTEM
+     CORNERS
 ===================================================== -->
 
 <div class="corner top-left">
-
     SYSTEM: UNKNOWN
-
 </div>
-
 
 <div class="corner top-right">
-
     ARCHIVE // 001
-
 </div>
-
 
 <div class="corner bottom-left">
-
     CONNECTION: UNSTABLE
-
 </div>
 
-
 <div class="corner bottom-right">
-
     00:00:00
-
 </div>
 
 
@@ -1199,25 +1075,18 @@ body{
 
 <div class="content">
 
-
     <div class="top-secret">
-
         █ ACCESS RESTRICTED █
-
     </div>
 
 
     <div class="title">
-
         THE HIDDEN ARCHIVE
-
     </div>
 
 
     <div class="creator">
-
         Created by VISHAL N. TELAM
-
     </div>
 
 
@@ -1225,9 +1094,7 @@ body{
 
 
     <div class="message">
-
         SOME THINGS ARE NOT MEANT TO BE FOUND.
-
     </div>
 
 
@@ -1238,11 +1105,8 @@ body{
         class="enter"
         onclick="enterArchive()"
     >
-
         ENTER THE ARCHIVE →
-
     </a>
-
 
 </div>
 
@@ -1259,29 +1123,28 @@ body{
 >
 
 
+    <div class="clue-tracker" id="clueTracker">
+
+        CLUES FOUND: 0 / 4
+
+    </div>
+
+
     <div class="archive-header">
 
-
         <div class="archive-code">
-
             ARCHIVE // 001
-
         </div>
 
 
         <h2>
-
             THE ARCHIVE
-
         </h2>
 
 
         <p>
-
-            YOU HAVE ENTERED THE UNKNOWN.
-
+            FOUR FILES. FOUR CLUES.
         </p>
-
 
     </div>
 
@@ -1289,149 +1152,118 @@ body{
     <div class="archive-grid">
 
 
-        <!-- BOX 01 -->
+        <!-- FILE 01 -->
 
         <div
             class="archive-box"
+            id="box1"
             onclick="openFile('MEMORY')"
         >
 
             <span class="box-number">
-
                 01
-
             </span>
 
 
             <div class="box-icon">
-
-                🔒
-
+                ◈
             </div>
 
 
             <h3>
-
                 MEMORY
-
             </h3>
 
 
-            <small>
-
-                LOCKED
-
+            <small id="status1">
+                SEARCH
             </small>
 
         </div>
 
 
-        <!-- BOX 02 -->
+        <!-- FILE 02 -->
 
         <div
             class="archive-box"
-            onclick="openFile('UNKNOWN')"
+            onclick="lockedFile()"
         >
 
             <span class="box-number">
-
                 02
-
             </span>
 
 
             <div class="box-icon">
-
                 ?
-
             </div>
 
 
             <h3>
-
                 UNKNOWN
-
             </h3>
 
 
             <small>
-
-                UNIDENTIFIED
-
+                LOCKED
             </small>
 
         </div>
 
 
-        <!-- BOX 03 -->
+        <!-- FILE 03 -->
 
         <div
             class="archive-box"
-            onclick="openFile('EYE')"
+            onclick="lockedFile()"
         >
 
             <span class="box-number">
-
                 03
-
             </span>
 
 
             <div class="box-icon">
-
                 ◉
-
             </div>
 
 
             <h3>
-
                 THE EYE
-
             </h3>
 
 
             <small>
-
-                WATCHING
-
+                LOCKED
             </small>
 
         </div>
 
 
-        <!-- BOX 04 -->
+        <!-- FILE 04 -->
 
         <div
             class="archive-box"
-            onclick="openFile('LOST')"
+            onclick="lockedFile()"
         >
 
             <span class="box-number">
-
                 04
-
             </span>
 
 
             <div class="box-icon">
-
                 ▣
-
             </div>
 
 
             <h3>
-
                 LOST FILE
-
             </h3>
 
 
             <small>
-
-                CLASSIFIED
-
+                LOCKED
             </small>
 
         </div>
@@ -1442,20 +1274,13 @@ body{
 
     <div class="archive-footer">
 
-
         <span>
-
             4 FILES DETECTED
-
         </span>
-
 
         <span>
-
             STATUS: UNSTABLE
-
         </span>
-
 
     </div>
 
@@ -1464,33 +1289,109 @@ body{
 
 
 <!-- =====================================================
-     JAVASCRIPT
+     FILE SCREEN
 ===================================================== -->
 
-<script>
+<div
+    class="file-screen"
+    id="fileScreen"
+>
 
+
+    <div class="file-box">
+
+
+        <div class="file-label">
+            ARCHIVE // FILE 01
+        </div>
+
+
+        <div class="file-title">
+            MEMORY
+        </div>
+
+
+        <div class="file-status">
+            STATUS: CORRUPTED
+        </div>
+
+
+        <div
+            class="file-message"
+            id="fileMessage"
+        >
+
+            Somewhere inside this archive,
+            something was left behind.
+
+        </div>
+
+
+        <div
+            class="search-memory"
+            id="searchButton"
+            onclick="searchMemory()"
+        >
+
+            SEARCH THE MEMORY
+
+        </div>
+
+
+        <div
+            class="clue-result"
+            id="clueResult"
+        >
+
+            <div class="clue-text">
+
+                MEMORY FOUND.<br><br>
+
+                03 / 07 / 19 / ?<br><br>
+
+                THE FIRST KEY IS NOT A NUMBER.
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="close-file"
+            onclick="closeFile()"
+        >
+
+            ← RETURN TO ARCHIVE
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
 
 /* =====================================================
    PARTICLES
 ===================================================== */
 
 const canvas =
-document.getElementById(
-    "particles"
-);
+document.getElementById("particles");
 
 const ctx =
 canvas.getContext("2d");
 
-let particles = [];
+let particles=[];
 
 
 function resize(){
 
-    canvas.width =
+    canvas.width=
     window.innerWidth;
 
-    canvas.height =
+    canvas.height=
     window.innerHeight;
 
 }
@@ -1505,11 +1406,9 @@ window.addEventListener(
 );
 
 
-/* CREATE PARTICLES */
-
 for(
-    let i = 0;
-    i < 150;
+    let i=0;
+    i<150;
     i++
 ){
 
@@ -1517,30 +1416,28 @@ for(
 
         x:
         Math.random()
-        * window.innerWidth,
+        *window.innerWidth,
 
         y:
         Math.random()
-        * window.innerHeight,
+        *window.innerHeight,
 
         size:
         Math.random()
-        * 1.5 + .2,
+        *1.5+.2,
 
         speed:
         Math.random()
-        * .35 + .05,
+        *.35+.05,
 
         opacity:
         Math.random()
-        * .45 + .05
+        *.45+.05
 
     });
 
 }
 
-
-/* ANIMATE PARTICLES */
 
 function animate(){
 
@@ -1553,21 +1450,19 @@ function animate(){
 
 
     particles.forEach(
-        p => {
+        p=>{
 
-            p.y -= p.speed;
+            p.y-=p.speed;
 
 
-            if(
-                p.y < 0
-            ){
+            if(p.y<0){
 
-                p.y =
+                p.y=
                 canvas.height;
 
-                p.x =
+                p.x=
                 Math.random()
-                * canvas.width;
+                *canvas.width;
 
             }
 
@@ -1576,21 +1471,15 @@ function animate(){
 
 
             ctx.arc(
-
                 p.x,
-
                 p.y,
-
                 p.size,
-
                 0,
-
-                Math.PI * 2
-
+                Math.PI*2
             );
 
 
-            ctx.fillStyle =
+            ctx.fillStyle=
             `rgba(
                 180,
                 200,
@@ -1621,86 +1510,226 @@ animate();
 
 function enterArchive(){
 
-    const main =
+    const main=
     document.getElementById(
         "mainScreen"
     );
 
-    const content =
+    const content=
     document.querySelector(
         ".content"
     );
 
-    const archive =
+    const archive=
     document.getElementById(
         "archiveRoom"
     );
 
 
-    content.style.transition =
+    content.style.transition=
     "1.2s ease";
 
-
-    content.style.transform =
+    content.style.transform=
     "scale(1.15)";
 
-
-    content.style.opacity =
+    content.style.opacity=
     "0";
 
-
-    content.style.filter =
+    content.style.filter=
     "blur(15px)";
 
 
-    setTimeout(
-        () => {
+    setTimeout(()=>{
 
-            main.style.display =
-            "none";
+        main.style.display="none";
 
+        archive.style.display="flex";
 
-            archive.style.display =
-            "flex";
+        setTimeout(()=>{
 
-
-            setTimeout(
-                () => {
-
-                    archive.classList.add(
-                        "active"
-                    );
-
-                },
-                50
+            archive.classList.add(
+                "active"
             );
 
-        },
-        1000
-    );
+        },50);
+
+    },1000);
 
 }
 
 
 /* =====================================================
-   TEMPORARY FILE INTERACTION
+   OPEN FILE 01
 ===================================================== */
 
 function openFile(file){
 
-    alert(
-        "FILE: " +
-        file +
-        "\n\nACCESS DENIED.\n\n"
-        +
-        "This file is still locked."
+    if(file !== "MEMORY"){
+        return;
+    }
+
+
+    const screen=
+    document.getElementById(
+        "fileScreen"
+    );
+
+
+    screen.style.display=
+    "flex";
+
+
+    setTimeout(()=>{
+
+        screen.classList.add(
+            "active"
+        );
+
+    },50);
+
+}
+
+
+/* =====================================================
+   SEARCH MEMORY
+===================================================== */
+
+function searchMemory(){
+
+    const button=
+    document.getElementById(
+        "searchButton"
+    );
+
+    const result=
+    document.getElementById(
+        "clueResult"
+    );
+
+    const tracker=
+    document.getElementById(
+        "clueTracker"
+    );
+
+    const box=
+    document.getElementById(
+        "box1"
+    );
+
+    const status=
+    document.getElementById(
+        "status1"
+    );
+
+
+    button.style.display=
+    "none";
+
+
+    result.classList.add(
+        "show"
+    );
+
+
+    box.classList.add(
+        "completed"
+    );
+
+
+    status.textContent=
+    "CLUE FOUND";
+
+
+    tracker.textContent=
+    "CLUES FOUND: 1 / 4";
+
+}
+
+
+/* =====================================================
+   CLOSE FILE
+===================================================== */
+
+function closeFile(){
+
+    const screen=
+    document.getElementById(
+        "fileScreen"
+    );
+
+
+    screen.classList.remove(
+        "active"
+    );
+
+
+    setTimeout(()=>{
+
+        screen.style.display=
+        "none";
+
+    },700);
+
+}
+
+
+/* =====================================================
+   LOCKED FILE
+===================================================== */
+
+function lockedFile(){
+
+    const screen=
+    document.getElementById(
+        "fileScreen"
+    );
+
+    const message=
+    document.getElementById(
+        "fileMessage"
+    );
+
+    const button=
+    document.getElementById(
+        "searchButton"
+    );
+
+    const result=
+    document.getElementById(
+        "clueResult"
+    );
+
+
+    screen.style.display=
+    "flex";
+
+
+    setTimeout(()=>{
+
+        screen.classList.add(
+            "active"
+        );
+
+    },50);
+
+
+    message.innerHTML=
+    "ACCESS DENIED.<br><br>" +
+    "THIS FILE IS STILL LOCKED.";
+
+
+    button.style.display=
+    "none";
+
+
+    result.classList.remove(
+        "show"
     );
 
 }
 
 </script>
 
-
 </body>
 
-               </html>
+      </html>
