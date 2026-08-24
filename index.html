@@ -13,7 +13,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Cinzel+Decorative:wght@400;700;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-
 <style>
 
 /* =====================================================
@@ -34,34 +33,27 @@ body{
 }
 
 body{
-
     background:
-
     radial-gradient(
         circle at 50% 42%,
         rgba(0,255,150,.13),
         rgba(0,150,255,.08) 25%,
         transparent 48%
     ),
-
     radial-gradient(
         circle at 15% 75%,
         rgba(0,120,90,.14),
         transparent 38%
     ),
-
     radial-gradient(
         circle at 85% 20%,
         rgba(0,90,180,.12),
         transparent 35%
     ),
-
     #020303;
 
     color:#ddd;
-
     font-family:'Orbitron',monospace;
-
 }
 
 
@@ -70,7 +62,6 @@ body{
 ===================================================== */
 
 .fog{
-
     position:fixed;
     inset:-10%;
 
@@ -88,7 +79,6 @@ body{
 
     pointer-events:none;
     z-index:1;
-
 }
 
 @keyframes fogMove{
@@ -107,25 +97,17 @@ body{
 
 }
 
-
 #particles{
-
     position:fixed;
     inset:0;
-
     width:100%;
     height:100%;
-
     z-index:2;
-
 }
 
-
 .scanlines{
-
     position:fixed;
     inset:0;
-
     pointer-events:none;
     z-index:50;
 
@@ -137,15 +119,11 @@ body{
         transparent 1px,
         transparent 5px
     );
-
 }
 
-
 .vignette{
-
     position:fixed;
     inset:0;
-
     pointer-events:none;
     z-index:49;
 
@@ -156,23 +134,20 @@ body{
         rgba(0,0,0,.45) 70%,
         rgba(0,0,0,.96) 100%
     );
-
 }
 
 
 /* =====================================================
-   CORNER UI
+   CORNERS
 ===================================================== */
 
 .corner{
-
     position:fixed;
     z-index:20;
 
     font-size:7px;
     letter-spacing:2px;
     color:#29413c;
-
 }
 
 .top-left{
@@ -201,34 +176,26 @@ body{
 ===================================================== */
 
 .main{
-
     position:absolute;
     inset:0;
 
     display:flex;
-
     justify-content:center;
     align-items:center;
 
     text-align:center;
 
     z-index:10;
-
     transition:1s ease;
-
 }
 
-
 .content{
-
     width:92%;
     max-width:1000px;
 
     animation:
     intro 3s ease forwards;
-
 }
-
 
 @keyframes intro{
 
@@ -246,18 +213,14 @@ body{
 
 }
 
-
 .top-secret{
-
     font-size:9px;
     letter-spacing:5px;
-
     color:#55706a;
 
     margin-bottom:28px;
 
     animation:blink 4s infinite;
-
 }
 
 @keyframes blink{
@@ -272,9 +235,7 @@ body{
 
 }
 
-
 .title{
-
     font-family:'Cinzel Decorative',serif;
 
     font-size:
@@ -295,13 +256,10 @@ body{
     0 0 5px rgba(255,255,255,.4),
     0 0 25px rgba(0,255,180,.18),
     0 0 70px rgba(0,120,255,.08);
-
 }
-
 
 .title::before,
 .title::after{
-
     content:"THE HIDDEN ARCHIVE";
 
     position:absolute;
@@ -309,25 +267,17 @@ body{
     width:100%;
 
     opacity:0;
-
 }
-
 
 .title::before{
-
     color:#48bfa0;
     animation:glitch1 5s infinite;
-
 }
-
 
 .title::after{
-
     color:#4185c9;
     animation:glitch2 5s infinite;
-
 }
-
 
 @keyframes glitch1{
 
@@ -346,7 +296,6 @@ body{
     }
 
 }
-
 
 @keyframes glitch2{
 
@@ -372,7 +321,6 @@ body{
 ===================================================== */
 
 .creator{
-
     margin-top:22px;
 
     font-family:'Caveat Brush',cursive;
@@ -385,12 +333,9 @@ body{
     color:#aaa;
 
     transform:rotate(-2deg);
-
 }
 
-
 .line{
-
     width:180px;
     height:1px;
 
@@ -403,22 +348,15 @@ body{
         #47766d,
         transparent
     );
-
 }
-
 
 .message{
-
     font-size:10px;
     letter-spacing:3px;
-
     color:#53615f;
-
 }
 
-
 .enter{
-
     display:inline-block;
 
     padding:16px 32px;
@@ -432,27 +370,20 @@ body{
     text-decoration:none;
 
     font-size:10px;
-
     letter-spacing:4px;
 
     cursor:pointer;
 
     transition:.5s;
-
 }
 
-
 .enter:hover{
-
     color:#fff;
-
     border-color:#72a99c;
-
     letter-spacing:6px;
 
     box-shadow:
     0 0 25px rgba(0,255,180,.12);
-
 }
 
 
@@ -461,7 +392,6 @@ body{
 ===================================================== */
 
 .archive-room{
-
     position:fixed;
     inset:0;
 
@@ -470,26 +400,22 @@ body{
     display:none;
 
     flex-direction:column;
-
     justify-content:center;
     align-items:center;
 
     padding:30px;
 
     background:
-
     radial-gradient(
         circle at 50% 45%,
         rgba(0,255,150,.09),
         transparent 40%
     ),
-
     radial-gradient(
         circle at 80% 20%,
         rgba(0,100,255,.08),
         transparent 35%
     ),
-
     #020504;
 
     opacity:0;
@@ -497,12 +423,31 @@ body{
     transition:1.2s ease;
 
     overflow:auto;
-
 }
-
 
 .archive-room.active{
     opacity:1;
+}
+
+
+/* =====================================================
+   CLUE TRACKER
+===================================================== */
+
+.clue-tracker{
+    position:absolute;
+
+    top:25px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:7px;
+    letter-spacing:3px;
+
+    color:#46655e;
+
+    white-space:nowrap;
 }
 
 
@@ -511,28 +456,20 @@ body{
 ===================================================== */
 
 .archive-header{
-
     text-align:center;
-
     margin-bottom:35px;
-
 }
 
-
 .archive-code{
-
     font-size:8px;
     letter-spacing:5px;
 
     color:#3f7770;
 
     margin-bottom:15px;
-
 }
 
-
 .archive-header h2{
-
     font-family:'Cinzel Decorative',serif;
 
     font-size:
@@ -542,73 +479,47 @@ body{
 
     color:#ddd;
 
+    text-shadow:
+    0 0 25px rgba(0,255,180,.15);
 }
 
-
 .archive-header p{
-
     margin-top:15px;
 
     font-size:8px;
     letter-spacing:4px;
 
     color:#4c6662;
-
 }
 
 
 /* =====================================================
-   CLUE TRACKER
-===================================================== */
-
-.clue-tracker{
-
-    position:absolute;
-
-    top:25px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    font-size:7px;
-
-    letter-spacing:3px;
-
-    color:#46655e;
-
-}
-
-
-/* =====================================================
-   ARCHIVE GRID
+   GRID
 ===================================================== */
 
 .archive-grid{
-
     display:grid;
 
     grid-template-columns:
     repeat(2,minmax(130px,220px));
 
     gap:18px;
-
 }
 
 
 /* =====================================================
-   ARCHIVE BOX
+   BOX
 ===================================================== */
 
 .archive-box{
-
     position:relative;
 
     height:155px;
 
     border:1px solid #182725;
 
-    background:rgba(3,12,10,.65);
+    background:
+    rgba(3,12,10,.65);
 
     display:flex;
 
@@ -624,70 +535,88 @@ body{
     transition:.5s;
 
     overflow:hidden;
-
 }
 
-
 .archive-box:hover{
-
     border-color:#376b62;
 
     transform:translateY(-5px);
 
     box-shadow:
     0 10px 35px rgba(0,255,180,.08);
-
 }
 
-
 .archive-box.completed{
-
     border-color:#3f8f78;
 
     box-shadow:
     inset 0 0 25px rgba(0,255,180,.05);
+}
+
+.archive-box.unlocked{
+    border-color:#294e47;
+
+    animation:
+    unlockPulse 3s infinite;
+}
+
+@keyframes unlockPulse{
+
+    0%,100%{
+        box-shadow:
+        0 0 0 rgba(0,255,180,0);
+    }
+
+    50%{
+        box-shadow:
+        0 0 20px rgba(0,255,180,.07);
+    }
 
 }
 
+.archive-box.locked{
+    opacity:.45;
+    cursor:not-allowed;
+}
+
+.archive-box.locked:hover{
+    transform:none;
+    border-color:#182725;
+    box-shadow:none;
+}
 
 .box-number{
-
     position:absolute;
 
     top:10px;
     left:12px;
 
     font-size:7px;
-
     color:#30443f;
-
 }
 
-
 .box-icon{
-
     font-size:27px;
-
     color:#55716c;
 
     margin-bottom:12px;
 
+    transition:.4s;
 }
 
+.archive-box:hover .box-icon{
+    transform:scale(1.15);
+}
 
 .archive-box h3{
-
     font-size:11px;
 
     letter-spacing:3px;
 
     color:#aaa;
-
 }
 
-
 .archive-box small{
-
     margin-top:8px;
 
     font-size:6px;
@@ -695,18 +624,15 @@ body{
     letter-spacing:3px;
 
     color:#3d5752;
-
 }
 
 
 /* =====================================================
-   FILE OVERLAY
+   FILE SCREEN
 ===================================================== */
 
 .file-screen{
-
     position:fixed;
-
     inset:0;
 
     z-index:100;
@@ -717,7 +643,6 @@ body{
     align-items:center;
 
     background:
-
     radial-gradient(
         circle at center,
         rgba(0,80,65,.12),
@@ -727,21 +652,14 @@ body{
     opacity:0;
 
     transition:1s ease;
-
 }
-
 
 .file-screen.active{
-
     display:flex;
-
     opacity:1;
-
 }
 
-
 .file-box{
-
     width:min(600px,88%);
 
     padding:45px 30px;
@@ -749,7 +667,7 @@ body{
     border:1px solid #27453f;
 
     background:
-    rgba(1,8,7,.9);
+    rgba(1,8,7,.94);
 
     text-align:center;
 
@@ -757,52 +675,31 @@ body{
     0 0 60px rgba(0,255,180,.05);
 
     animation:fileOpen 1s ease;
-
 }
-
 
 @keyframes fileOpen{
 
     from{
-
         opacity:0;
-
-        transform:
-        scale(.85)
-        translateY(20px);
-
+        transform:scale(.85) translateY(20px);
         filter:blur(10px);
-
     }
 
     to{
-
         opacity:1;
-
-        transform:
-        scale(1)
-        translateY(0);
-
+        transform:scale(1) translateY(0);
         filter:blur(0);
-
     }
 
 }
 
-
 .file-label{
-
     font-size:7px;
-
     letter-spacing:5px;
-
     color:#46776c;
-
 }
 
-
 .file-title{
-
     margin-top:18px;
 
     font-family:'Cinzel Decorative',serif;
@@ -811,42 +708,32 @@ body{
     clamp(25px,6vw,55px);
 
     color:#ddd;
-
 }
 
-
 .file-status{
-
     margin-top:12px;
 
     font-size:7px;
-
     letter-spacing:3px;
 
     color:#52645f;
-
 }
 
-
 .file-message{
-
     margin:35px auto;
 
     max-width:450px;
 
     font-size:11px;
-
     line-height:2;
 
     letter-spacing:2px;
 
     color:#8b9895;
-
 }
 
-
-.search-memory{
-
+.search-memory,
+.hidden-symbol{
     display:inline-block;
 
     padding:14px 25px;
@@ -858,43 +745,33 @@ body{
     cursor:pointer;
 
     font-size:8px;
-
     letter-spacing:3px;
 
     transition:.4s;
-
 }
 
-
-.search-memory:hover{
-
-    color:white;
+.search-memory:hover,
+.hidden-symbol:hover{
+    color:#fff;
 
     border-color:#79a99f;
 
     box-shadow:
     0 0 25px rgba(0,255,180,.1);
-
 }
 
 
 /* =====================================================
-   CLUE REVEAL
+   CLUE RESULT
 ===================================================== */
 
 .clue-result{
-
     display:none;
-
 }
-
 
 .clue-result.show{
-
     display:block;
-
 }
-
 
 .clue-text{
 
@@ -903,7 +780,6 @@ body{
     padding:20px;
 
     border-top:1px solid #203a35;
-
     border-bottom:1px solid #203a35;
 
     color:#9ab5ae;
@@ -913,13 +789,61 @@ body{
     letter-spacing:4px;
 
     line-height:2;
+}
+
+
+/* =====================================================
+   GLITCH EFFECT FOR UNKNOWN
+===================================================== */
+
+.unknown-glitch{
+    position:relative;
+
+    font-size:70px;
+
+    color:#6faaa0;
+
+    cursor:pointer;
+
+    text-shadow:
+    0 0 10px rgba(0,255,180,.25);
+
+    animation:
+    symbolGlitch 2.5s infinite;
+}
+
+@keyframes symbolGlitch{
+
+    0%,85%,100%{
+        transform:none;
+        opacity:1;
+    }
+
+    86%{
+        transform:translateX(-5px);
+        opacity:.6;
+    }
+
+    88%{
+        transform:translateX(5px);
+        opacity:.8;
+    }
+
+    90%{
+        transform:none;
+        opacity:1;
+    }
 
 }
 
 
+/* =====================================================
+   CLOSE
+===================================================== */
+
 .close-file{
 
-    margin-top:20px;
+    margin-top:25px;
 
     font-size:7px;
 
@@ -929,6 +853,11 @@ body{
 
     cursor:pointer;
 
+    transition:.3s;
+}
+
+.close-file:hover{
+    color:#9ab5ae;
 }
 
 
@@ -951,7 +880,6 @@ body{
     letter-spacing:2px;
 
     color:#263a36;
-
 }
 
 
@@ -982,32 +910,24 @@ body{
     }
 
     .archive-grid{
-
         width:100%;
         max-width:360px;
-
         gap:10px;
-
     }
 
     .archive-box{
-
         height:135px;
-
     }
 
     .archive-header h2{
-
         letter-spacing:3px;
+    }
 
+    .file-box{
+        padding:35px 20px;
     }
 
 }
-
-
-/* =====================================================
-   EXTRA SMALL
-===================================================== */
 
 @media(max-width:380px){
 
@@ -1073,42 +993,36 @@ body{
 
 <main class="main" id="mainScreen">
 
-<div class="content">
+    <div class="content">
 
-    <div class="top-secret">
-        █ ACCESS RESTRICTED █
+        <div class="top-secret">
+            █ ACCESS RESTRICTED █
+        </div>
+
+        <div class="title">
+            THE HIDDEN ARCHIVE
+        </div>
+
+        <div class="creator">
+            Created by VISHAL TELAM
+        </div>
+
+        <div class="line"></div>
+
+        <div class="message">
+            SOME THINGS ARE NOT MEANT TO BE FOUND.
+        </div>
+
+        <div style="height:35px;"></div>
+
+        <a
+            class="enter"
+            onclick="enterArchive()"
+        >
+            ENTER THE ARCHIVE →
+        </a>
+
     </div>
-
-
-    <div class="title">
-        THE HIDDEN ARCHIVE
-    </div>
-
-
-    <div class="creator">
-        Created by VISHAL N. TELAM
-    </div>
-
-
-    <div class="line"></div>
-
-
-    <div class="message">
-        SOME THINGS ARE NOT MEANT TO BE FOUND.
-    </div>
-
-
-    <div style="height:35px;"></div>
-
-
-    <a
-        class="enter"
-        onclick="enterArchive()"
-    >
-        ENTER THE ARCHIVE →
-    </a>
-
-</div>
 
 </main>
 
@@ -1122,11 +1036,11 @@ body{
     id="archiveRoom"
 >
 
-
-    <div class="clue-tracker" id="clueTracker">
-
+    <div
+        class="clue-tracker"
+        id="clueTracker"
+    >
         CLUES FOUND: 0 / 4
-
     </div>
 
 
@@ -1136,11 +1050,9 @@ body{
             ARCHIVE // 001
         </div>
 
-
         <h2>
             THE ARCHIVE
         </h2>
-
 
         <p>
             FOUR FILES. FOUR CLUES.
@@ -1152,28 +1064,27 @@ body{
     <div class="archive-grid">
 
 
-        <!-- FILE 01 -->
+        <!-- =================================================
+             FILE 01
+        ================================================== -->
 
         <div
             class="archive-box"
             id="box1"
-            onclick="openFile('MEMORY')"
+            onclick="openMemory()"
         >
 
             <span class="box-number">
                 01
             </span>
 
-
             <div class="box-icon">
                 ◈
             </div>
 
-
             <h3>
                 MEMORY
             </h3>
-
 
             <small id="status1">
                 SEARCH
@@ -1182,39 +1093,42 @@ body{
         </div>
 
 
-        <!-- FILE 02 -->
+        <!-- =================================================
+             FILE 02
+        ================================================== -->
 
         <div
-            class="archive-box"
-            onclick="lockedFile()"
+            class="archive-box locked"
+            id="box2"
+            onclick="openUnknown()"
         >
 
             <span class="box-number">
                 02
             </span>
 
-
             <div class="box-icon">
                 ?
             </div>
-
 
             <h3>
                 UNKNOWN
             </h3>
 
-
-            <small>
+            <small id="status2">
                 LOCKED
             </small>
 
         </div>
 
 
-        <!-- FILE 03 -->
+        <!-- =================================================
+             FILE 03
+        ================================================== -->
 
         <div
-            class="archive-box"
+            class="archive-box locked"
+            id="box3"
             onclick="lockedFile()"
         >
 
@@ -1222,16 +1136,13 @@ body{
                 03
             </span>
 
-
             <div class="box-icon">
                 ◉
             </div>
 
-
             <h3>
                 THE EYE
             </h3>
-
 
             <small>
                 LOCKED
@@ -1240,10 +1151,13 @@ body{
         </div>
 
 
-        <!-- FILE 04 -->
+        <!-- =================================================
+             FILE 04
+        ================================================== -->
 
         <div
-            class="archive-box"
+            class="archive-box locked"
+            id="box4"
             onclick="lockedFile()"
         >
 
@@ -1251,23 +1165,19 @@ body{
                 04
             </span>
 
-
             <div class="box-icon">
                 ▣
             </div>
 
-
             <h3>
                 LOST FILE
             </h3>
-
 
             <small>
                 LOCKED
             </small>
 
         </div>
-
 
     </div>
 
@@ -1284,7 +1194,6 @@ body{
 
     </div>
 
-
 </section>
 
 
@@ -1297,21 +1206,28 @@ body{
     id="fileScreen"
 >
 
-
     <div class="file-box">
 
-
-        <div class="file-label">
+        <div
+            class="file-label"
+            id="fileLabel"
+        >
             ARCHIVE // FILE 01
         </div>
 
 
-        <div class="file-title">
+        <div
+            class="file-title"
+            id="fileTitle"
+        >
             MEMORY
         </div>
 
 
-        <div class="file-status">
+        <div
+            class="file-status"
+            id="fileStatus"
+        >
             STATUS: CORRUPTED
         </div>
 
@@ -1320,23 +1236,51 @@ body{
             class="file-message"
             id="fileMessage"
         >
-
             Somewhere inside this archive,
             something was left behind.
-
         </div>
 
+
+        <!-- MEMORY BUTTON -->
 
         <div
             class="search-memory"
-            id="searchButton"
+            id="memoryButton"
             onclick="searchMemory()"
         >
-
             SEARCH THE MEMORY
+        </div>
+
+
+        <!-- UNKNOWN SYMBOL -->
+
+        <div
+            class="clue-result"
+            id="unknownResult"
+        >
+
+            <div
+                class="unknown-glitch"
+                onclick="revealUnknownClue()"
+            >
+                ◇
+            </div>
+
+            <div
+                style="
+                margin-top:18px;
+                font-size:7px;
+                letter-spacing:3px;
+                color:#4e6862;
+                "
+            >
+                SOMETHING IS HIDING HERE
+            </div>
 
         </div>
 
+
+        <!-- CLUE RESULT -->
 
         <div
             class="clue-result"
@@ -1360,11 +1304,8 @@ body{
             class="close-file"
             onclick="closeFile()"
         >
-
             ← RETURN TO ARCHIVE
-
         </div>
-
 
     </div>
 
@@ -1559,33 +1500,35 @@ function enterArchive(){
 
 
 /* =====================================================
-   OPEN FILE 01
+   OPEN MEMORY
 ===================================================== */
 
-function openFile(file){
+function openMemory(){
 
-    if(file !== "MEMORY"){
-        return;
-    }
-
-
-    const screen=
-    document.getElementById(
-        "fileScreen"
+    setupFileScreen(
+        "ARCHIVE // FILE 01",
+        "MEMORY",
+        "STATUS: CORRUPTED",
+        "Somewhere inside this archive, something was left behind."
     );
 
 
-    screen.style.display=
-    "flex";
+    document.getElementById(
+        "memoryButton"
+    ).style.display="inline-block";
 
 
-    setTimeout(()=>{
+    document.getElementById(
+        "unknownResult"
+    ).classList.remove("show");
 
-        screen.classList.add(
-            "active"
-        );
 
-    },50);
+    document.getElementById(
+        "clueResult"
+    ).classList.remove("show");
+
+
+    showFileScreen();
 
 }
 
@@ -1598,17 +1541,12 @@ function searchMemory(){
 
     const button=
     document.getElementById(
-        "searchButton"
+        "memoryButton"
     );
 
     const result=
     document.getElementById(
         "clueResult"
-    );
-
-    const tracker=
-    document.getElementById(
-        "clueTracker"
     );
 
     const box=
@@ -1619,6 +1557,11 @@ function searchMemory(){
     const status=
     document.getElementById(
         "status1"
+    );
+
+    const tracker=
+    document.getElementById(
+        "clueTracker"
     );
 
 
@@ -1642,6 +1585,529 @@ function searchMemory(){
 
     tracker.textContent=
     "CLUES FOUND: 1 / 4";
+
+
+    /* UNLOCK FILE 02 */
+
+    const box2=
+    document.getElementById(
+        "box2"
+    );
+
+    box2.classList.remove(
+        "locked"
+    );
+
+    box2.classList.add(
+        "unlocked"
+    );
+
+
+    document.getElementById(
+        "status2"
+    ).textContent=
+    "UNLOCKED";
+
+}
+
+
+/* =====================================================
+   OPEN UNKNOWN
+===================================================== */
+
+function openUnknown(){
+
+    const box2=
+    document.getElementById(
+        "box2"
+    );
+
+
+    if(
+        box2.classList.contains(
+            "locked"
+        )
+    ){
+
+        lockedFile();
+
+        return;
+
+    }
+
+
+    setupFileScreen(
+        "ARCHIVE // FILE 02",
+        "UNKNOWN",
+        "STATUS: UNIDENTIFIED",
+        "The file contains no name, no date and no origin.<br><br>But something is still responding."
+    );
+
+
+    document.getElementById(
+        "memoryButton"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "clueResult"
+    ).classList.remove("show");
+
+
+    document.getElementById(
+        "unknownResult"
+    ).classList.add("show");
+
+
+    showFileScreen();
+
+}
+
+
+/* =====================================================
+   REVEAL UNKNOWN CLUE
+===================================================== */
+
+function revealUnknownClue(){
+
+    const result=
+    document.getElementById(
+        "unknownResult"
+    );
+
+    const box2=
+    document.getElementById(
+        "box2"
+    );
+
+    const status=
+    document.getElementById(
+        "status2"
+    );
+
+    const tracker=
+    document.getElementById(
+        "clueTracker"
+    );
+
+
+    result.innerHTML=`
+
+        <div class="clue-text">
+
+            UNKNOWN SIGNAL DETECTED.<br><br>
+
+            ◇ → ◇ → ○ → ◇<br><br>
+
+            FOLLOW THE EYE.
+
+        </div>
+
+    `;
+
+
+    result.classList.add(
+        "show"
+    );
+
+
+    box2.classList.remove(
+        "unlocked"
+    );
+
+    box2.classList.add(
+        "completed"
+    );
+
+
+    status.textContent=
+    "CLUE FOUND";
+
+
+    tracker.textContent=
+    "CLUES FOUND: 2 / 4";
+
+
+    /* UNLOCK FILE 03 */
+
+    const box3=
+    document.getElementById(
+        "box3"
+    );
+
+
+    box3.classList.remove(
+        "locked"
+    );
+
+    box3.classList.add(
+        "unlocked"
+    );
+
+
+    box3.onclick=
+    function(){
+
+        openEye();
+
+    };
+
+
+    box3.querySelector(
+        "small"
+    ).textContent=
+    "UNLOCKED";
+
+}
+
+
+/* =====================================================
+   OPEN EYE
+===================================================== */
+
+function openEye(){
+
+    setupFileScreen(
+        "ARCHIVE // FILE 03",
+        "THE EYE",
+        "STATUS: WATCHING",
+        "You found the signal.<br><br>Now find what is watching you."
+    );
+
+
+    document.getElementById(
+        "memoryButton"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "clueResult"
+    ).classList.remove("show");
+
+
+    document.getElementById(
+        "unknownResult"
+    ).innerHTML=`
+
+        <div
+            class="unknown-glitch"
+            onclick="revealEyeClue()"
+        >
+            ◉
+        </div>
+
+        <div
+            style="
+            margin-top:18px;
+            font-size:7px;
+            letter-spacing:3px;
+            color:#4e6862;
+            "
+        >
+            DO NOT LOOK AWAY
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "unknownResult"
+    ).classList.add("show");
+
+
+    showFileScreen();
+
+}
+
+
+/* =====================================================
+   EYE CLUE
+===================================================== */
+
+function revealEyeClue(){
+
+    document.getElementById(
+        "unknownResult"
+    ).innerHTML=`
+
+        <div class="clue-text">
+
+            THE EYE SAW YOU.<br><br>
+
+            7 — 4 — 1 — ?<br><br>
+
+            THE LAST DOOR IS NOT LOST.
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "unknownResult"
+    ).classList.add(
+        "show"
+    );
+
+
+    document.getElementById(
+        "box3"
+    ).classList.remove(
+        "unlocked"
+    );
+
+
+    document.getElementById(
+        "box3"
+    ).classList.add(
+        "completed"
+    );
+
+
+    document.getElementById(
+        "box3"
+    ).querySelector(
+        "small"
+    ).textContent=
+    "CLUE FOUND";
+
+
+    document.getElementById(
+        "clueTracker"
+    ).textContent=
+    "CLUES FOUND: 3 / 4";
+
+
+    /* UNLOCK FILE 04 */
+
+    const box4=
+    document.getElementById(
+        "box4"
+    );
+
+
+    box4.classList.remove(
+        "locked"
+    );
+
+    box4.classList.add(
+        "unlocked"
+    );
+
+
+    box4.onclick=
+    function(){
+
+        openLostFile();
+
+    };
+
+
+    box4.querySelector(
+        "small"
+    ).textContent=
+    "UNLOCKED";
+
+}
+
+
+/* =====================================================
+   OPEN LOST FILE
+===================================================== */
+
+function openLostFile(){
+
+    const box4=
+    document.getElementById(
+        "box4"
+    );
+
+
+    if(
+        box4.classList.contains(
+            "locked"
+        )
+    ){
+
+        lockedFile();
+
+        return;
+
+    }
+
+
+    setupFileScreen(
+        "ARCHIVE // FILE 04",
+        "LOST FILE",
+        "STATUS: CLASSIFIED",
+        "This file should not exist.<br><br>Something was hidden here before the archive was sealed."
+    );
+
+
+    document.getElementById(
+        "memoryButton"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "unknownResult"
+    ).innerHTML=`
+
+        <div
+            class="unknown-glitch"
+            onclick="revealLostClue()"
+        >
+            ▣
+        </div>
+
+        <div
+            style="
+            margin-top:18px;
+            font-size:7px;
+            letter-spacing:3px;
+            color:#4e6862;
+            "
+        >
+            OPEN THE LOST FILE
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "unknownResult"
+    ).classList.add(
+        "show"
+    );
+
+
+    document.getElementById(
+        "clueResult"
+    ).classList.remove(
+        "show"
+    );
+
+
+    showFileScreen();
+
+}
+
+
+/* =====================================================
+   FINAL CLUE 4
+===================================================== */
+
+function revealLostClue(){
+
+    document.getElementById(
+        "unknownResult"
+    ).innerHTML=`
+
+        <div class="clue-text">
+
+            FILE RECOVERED.<br><br>
+
+            THE JOURNEY IS COMPLETE.<br><br>
+
+            4 / 4<br><br>
+
+            SOMETHING IS WAITING BEYOND THE ARCHIVE.
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "clueTracker"
+    ).textContent=
+    "CLUES FOUND: 4 / 4";
+
+
+    document.getElementById(
+        "box4"
+    ).classList.remove(
+        "unlocked"
+    );
+
+
+    document.getElementById(
+        "box4"
+    ).classList.add(
+        "completed"
+    );
+
+
+    document.getElementById(
+        "box4"
+    ).querySelector(
+        "small"
+    ).textContent=
+    "CLUE FOUND";
+
+}
+
+
+/* =====================================================
+   FILE SETUP
+===================================================== */
+
+function setupFileScreen(
+    label,
+    title,
+    status,
+    message
+){
+
+    document.getElementById(
+        "fileLabel"
+    ).textContent=
+    label;
+
+
+    document.getElementById(
+        "fileTitle"
+    ).textContent=
+    title;
+
+
+    document.getElementById(
+        "fileStatus"
+    ).textContent=
+    status;
+
+
+    document.getElementById(
+        "fileMessage"
+    ).innerHTML=
+    message;
+
+}
+
+
+/* =====================================================
+   SHOW FILE
+===================================================== */
+
+function showFileScreen(){
+
+    const screen=
+    document.getElementById(
+        "fileScreen"
+    );
+
+
+    screen.style.display=
+    "flex";
+
+
+    setTimeout(()=>{
+
+        screen.classList.add(
+            "active"
+        );
+
+    },50);
 
 }
 
@@ -1679,52 +2145,35 @@ function closeFile(){
 
 function lockedFile(){
 
-    const screen=
-    document.getElementById(
-        "fileScreen"
+    setupFileScreen(
+        "ACCESS // DENIED",
+        "LOCKED",
+        "STATUS: RESTRICTED",
+        "This file is still locked.<br><br>Find the previous clue first."
     );
 
-    const message=
-    document.getElementById(
-        "fileMessage"
-    );
 
-    const button=
     document.getElementById(
-        "searchButton"
-    );
+        "memoryButton"
+    ).style.display="none";
 
-    const result=
+
     document.getElementById(
         "clueResult"
-    );
+    ).classList.remove("show");
 
 
-    screen.style.display=
-    "flex";
+    document.getElementById(
+        "unknownResult"
+    ).innerHTML="";
 
 
-    setTimeout(()=>{
-
-        screen.classList.add(
-            "active"
-        );
-
-    },50);
+    document.getElementById(
+        "unknownResult"
+    ).classList.remove("show");
 
 
-    message.innerHTML=
-    "ACCESS DENIED.<br><br>" +
-    "THIS FILE IS STILL LOCKED.";
-
-
-    button.style.display=
-    "none";
-
-
-    result.classList.remove(
-        "show"
-    );
+    showFileScreen();
 
 }
 
@@ -1732,4 +2181,4 @@ function lockedFile(){
 
 </body>
 
-      </html>
+   </html>
